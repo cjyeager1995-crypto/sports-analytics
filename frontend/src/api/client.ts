@@ -1,4 +1,6 @@
-const BASE = "/api";
+const BASE = import.meta.env.PROD
+  ? "https://sports-analytics-p0qd.onrender.com/api"
+  : "/api";
 
 async function fetchJSON<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE}${path}`);
